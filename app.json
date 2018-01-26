@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/disclose/disclose",
+    "pages/appointment/appointment"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#62b900",
+    "list": [
+      {
+        "pagePath": "pages/disclose/disclose",
+        "iconPath": "img/write.png",
+        "selectedIconPath": "img/write_selected.png",
+        "text": "爆料"
+      },
+      {
+        "pagePath": "pages/appointment/appointment",
+        "iconPath": "img/appointment.png",
+        "selectedIconPath": "img/appointment_selected.png",
+        "text": "预约"
+      }
+    ]
+  }
+}

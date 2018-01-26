@@ -1,0 +1,22 @@
+/* pages/disclose/disclose.wxss */
+
+.body {
+  padding: 25rpx;
+}
+
+input {
+  width: 100%;
+  height: 100rpx;
+  border-bottom: 1rpx solid #eaeaea;
+  margin-bottom: 20rpx;
+}
+
+image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.img text {
+  height: 100rpx;
+  text-align: center;
+}
