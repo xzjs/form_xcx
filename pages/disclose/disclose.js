@@ -5,7 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    files: []
+    files: [],
+    name: '',
+    phone: '',
+    content: ''
   },
 
   /**
@@ -83,7 +86,48 @@ Page({
       urls: this.data.files // 需要预览的图片http链接列表
     })
   },
-  submit:function(){
-    console.log(this.data.files);
+  submit: function () {
+    var vm=this;
+    wx.request({
+      url: 'http://localhost/formWS/public/discloses', //仅为示例，并非真实的接口地址
+      data: {
+        'name': this.data.name,
+        'phone': this.data.phone,
+        'contents': this.data.content
+      },
+      method: 'POST',
+      success: function (res) {
+        console.log(res.data)
+        var disclose_id = res.data;
+        for (var i = 0; i < vm.data.files.length; i++) {
+          wx.uploadFile({
+            url: 'http://localhost/formWS/public/images',
+            filePath: vm.data.files[i],
+            name: 'img',
+            formData: {
+              'disclose_id': disclose_id
+            },
+            success: function (res) {
+              console.log(res.data);
+            }
+          })
+        }
+      }
+    })
+  },
+  bindNameInput: function (e) {
+    this.setData({
+      name: e.detail.value
+    })
+  },
+  bindPhoneInput: function (e) {
+    this.setData({
+      phone: e.detail.value
+    })
+  },
+  bindContentInput: function (e) {
+    this.setData({
+      content: e.detail.value
+    })
   }
 })
