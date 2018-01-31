@@ -1,4 +1,5 @@
 // pages/disclose/disclose.js
+const app = getApp()
 Page({
 
   /**
@@ -8,7 +9,7 @@ Page({
     files: [],
     name: '',
     phone: '',
-    content: ''
+    content: '',
   },
 
   /**
@@ -87,13 +88,13 @@ Page({
     })
   },
   submit: function () {
-    var vm=this;
+    var vm = this;
     wx.request({
-      url: 'http://localhost/formWS/public/discloses', //仅为示例，并非真实的接口地址
+      url: app.globalData.url + 'discloses',
       data: {
         'name': this.data.name,
         'phone': this.data.phone,
-        'contents': this.data.content
+        'contents': this.data.content,
       },
       method: 'POST',
       success: function (res) {
@@ -101,7 +102,7 @@ Page({
         var disclose_id = res.data;
         for (var i = 0; i < vm.data.files.length; i++) {
           wx.uploadFile({
-            url: 'http://localhost/formWS/public/images',
+            url: app.globalData.url + 'images',
             filePath: vm.data.files[i],
             name: 'img',
             formData: {
@@ -109,9 +110,20 @@ Page({
             },
             success: function (res) {
               console.log(res.data);
+              vm.setData({
+                name: '',
+                phone: '',
+                content: '',
+                files: []
+              });
+
             }
           })
         }
+        wx.showToast({
+          title: '成功',
+          icon: 'success'
+        })
       }
     })
   },

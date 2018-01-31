@@ -1,8 +1,8 @@
 <!--pages/disclose/disclose.wxml-->
 <view class='body'>
-  <input placeholder='姓名' bindinput="bindNameInput"></input>
-  <input placeholder='联系电话' bindinput='bindPhoneInput'></input>
-  <input placeholder='内容' bindinput='bindContentInput'></input>
+  <input placeholder='姓名' bindinput="bindNameInput" value="{{name}}"></input>
+  <input placeholder='联系电话' bindinput='bindPhoneInput' value="{{phone}}"></input>
+  <input placeholder='内容' bindinput='bindContentInput' value="{{content}}"></input>
   <view class="weui-uploader">
     <view class="weui-uploader__hd">
       <view class="weui-uploader__title">图片上传</view>

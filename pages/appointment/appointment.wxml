@@ -5,7 +5,7 @@
       <view class="weui-label">联系人</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="请输入您的名字" />
+      <input class="weui-input" placeholder="请输入您的名字" value='{{name}}' bindinput="bindNameInput"/>
     </view>
   </view>
   <view class="weui-cell weui-cell_input">
@@ -13,7 +13,7 @@
       <view class="weui-label">手机号码</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="请输入您的手机号码" />
+      <input class="weui-input" placeholder="请输入您的手机号码" value='{{phone}}' bindinput="bindPhoneInput"/>
     </view>
   </view>
   <view class="weui-cell weui-cell_input">
@@ -41,7 +41,7 @@
       <view class="weui-label">详细地址</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="请输入您的详细地址" />
+      <input class="weui-input" placeholder="请输入您的详细地址" value='{{address}}' bindinput="bindAddressInput"/>
     </view>
   </view>
   <view class="weui-cell weui-cell_input">
@@ -49,10 +49,10 @@
       <view class="weui-label">预约项目</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="请输入预约的项目" />
+      <input class="weui-input" placeholder="请输入预约的项目" value='{{project}}' bindinput="bindProjectInput"/>
     </view>
   </view>
   <view class="weui-btn-area">
-    <button class="weui-btn" type="primary" bindtap="showTopTips">确定</button>
+    <button class="weui-btn" type="primary" bindtap="submit">确定</button>
   </view>
 </view>
