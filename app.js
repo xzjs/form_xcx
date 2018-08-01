@@ -35,6 +35,6 @@ App({
   },
   globalData: {
     userInfo: null,
-    url: 'http://localhost/formWS/public/',
+    url: 'https://baoxiu.byqtv.cn/',
   }
 })

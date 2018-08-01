@@ -11,6 +11,10 @@ input {
   margin-bottom: 20rpx;
 }
 
+textarea {
+  border-bottom: 1rpx solid #eaeaea;
+}
+
 image {
   width: 100rpx;
   height: 100rpx;

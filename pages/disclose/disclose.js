@@ -108,6 +108,9 @@ Page({
             formData: {
               'disclose_id': disclose_id
             },
+            header: {
+              'content-type': 'application/x-www-form-urlencoded'
+            },
             success: function (res) {
               console.log(res.data);
               vm.setData({
